@@ -1,0 +1,197 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef3f9;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #2d62d9;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    display: flex;  
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between heading and navbar */
+}
+
+.header h1 {
+    margin: 0 auto; /* Center the heading */
+    font-size: 32px;
+    flex-grow: 1; /* Allows it to take up remaining space */
+    text-align: center; /* Ensures text is centered */
+}
+.heading{
+    text-align: center;
+    margin-left: 4rem;
+}
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.progress-bar {
+    width: 90%;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.progress-bar-fill {
+    width: 0;
+    background-color: #2d62d9;
+    height: 100%;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+/* Add Button */
+.add-button {
+    display: block;
+    width: 250px;
+    margin: 20px auto;
+    padding: 12px;
+    background-color: #2d62d9;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+.add-button:hover {
+    background-color: #1b4aa5;
+}
+
+/* Filters */
+.filters {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filters label {
+    font-weight: bold;
+    color: #333;
+}
+
+.filters select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Table */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+    background-color: #2d62d9;
+    color: white;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table a {
+    color: #2d62d9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+table tr td,th{
+    text-align: center;
+}
+
+table thead tr th{
+    text-align: center;
+}
+table input[type="radio"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.navbar{
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: flex-end; /* Move navbar to the right */
+    gap: 20px; /* Add spacing between links */
+    list-style: none; /* Remove bullet points */
+    padding: 10px 70px;
+
+  
+}
+.navbar a {
+    text-decoration: none;
+    
+    font-size: 18px;color: #ffffff;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+    background-color: #1b4aa5;
+    text-decoration: none;
+    cursor: pointer;
+}
+.acic{
+   margin-right: 22px;
+}
+.progress-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 25px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #4caf50;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
