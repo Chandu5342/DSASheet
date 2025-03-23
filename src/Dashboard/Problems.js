@@ -158,7 +158,7 @@ function Problems(props)
 
      useEffect(() => {
         if (ProblemList.length > 0) {
-            setProgress((SolvedProblems.length / ProblemList.length) * 100);
+            setProgress((SolvedProblems.length / dupProblemList.length) * 100);
         }
     }, [SolvedProblems, ProblemList]);
 
@@ -179,14 +179,14 @@ function Problems(props)
                         {Math.round(progress)}%
                     </div>
             </div>
-        {
-            props.role=="yes" && (
-                <button className="add-button" onClick={()=>{
-                    window.location.href="/Role/RoleDashboard";
-                }}>Role Mode</button>
-            )
-        }
-        {props.Id}
+            {
+                props.role=="yes" && (
+                    <button className="add-button" onClick={()=>{
+                        window.location.href="/Role/RoleDashboard";
+                    }}>Role Mode</button>
+                )
+            }
+       
        
 
              <div className="filters">
@@ -214,7 +214,61 @@ function Problems(props)
                         : <option>Loading...</option>}
                 </select>
             </div>
-            <table id="problems-table">
+            <div className="problems-container">
+            {/* Problems List */}
+            <div className="problems-list">
+                {ProblemList.map((item, index) => (
+                    <div className="problem-card" key={item.Id}>
+                        <div className="problem-info">
+                            <span className="problem-name">{item.ProblemName}</span>
+                            <div className="problem-meta">
+                                <span className={`difficulty ${item.Difficulty.toLowerCase()}`}>
+                                    {DifficultyMap[item.Difficulty]}
+                                </span>
+                                <span>{PlatformMap[item.Platform]}</span>
+                                <span>{TopicMap[item.Topic]}</span>
+                            </div>
+                        </div>
+                        <a className="solve-link" href={item.Link} target="_blank" rel="noopener noreferrer">
+                            Solve →
+                        </a>
+                    </div>
+                ))}
+            </div>
+
+            {/* Sidebar */}
+            <div className="sidebarp">
+                {/* Progress Section */}
+                <div className="progress-container">
+                    <h3>Your Progress</h3>
+                    <div className="progress-bar">
+                        <div className="progress-fill" style={{ width: `${progress}%` }}>
+                            {Math.round(progress)}%
+                        </div>
+                    </div>
+                </div>
+
+                {/* Leaderboard Section */}
+                <div className="leaderboard-container">
+                    <h3>Leaderboard</h3>
+                    <ul className="leaderboard-list">
+                        <li className="leaderboard-item">
+                            <span>#1 Abhishek Sharma</span>
+                            <span>181039</span>
+                        </li>
+                        <li className="leaderboard-item">
+                            <span>#2 Rohan Kumar</span>
+                            <span>147520</span>
+                        </li>
+                        <li className="leaderboard-item">
+                            <span>#3 Shaikh Tabrez</span>
+                            <span>147475</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+          {/*   <table id="problems-table">
             <thead>
                 <tr>
                     <th>#</th>
@@ -248,7 +302,7 @@ function Problems(props)
                 }
            
             </tbody>
-        </table>
+        </table> */}
     </>
   )
 }

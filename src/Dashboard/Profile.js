@@ -82,8 +82,9 @@ function Profile()
         
         {UserDet ?
          <>
+         <div className="Probmain">
          <Problems role={UserDet.Role}  id={UserDet.id} /> 
-         </>: 
+         </div></>: 
           <>
          <p>Loading...</p>
          </>}
