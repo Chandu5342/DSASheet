@@ -11,6 +11,7 @@ import AddNewProb from './Dashboard/AddNewProb';
 import Problems from './Dashboard/Problems';
 import RoleDashboard from './Role/RoleDashboard';
 import ProblemsR from './Role/ProblemsR';
+import Demo from './Demo.js';
 
 function App() {
   let [user, setUser] = useState(null);
@@ -25,7 +26,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={user ? <Profile /> : <Login />} />
+          <Route path='/' element={<Demo />} />
           <Route path='/LoginRelated/login' element={<Login />} />
           <Route path='/LoginRelated/register' element={<Register />} />
           <Route path='/Dashboard/profile' element={<Profile />} />
