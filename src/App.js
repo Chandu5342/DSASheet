@@ -3,7 +3,7 @@ import './App.css';
 import Login from './LoginRelated/Login';
 import Register from './LoginRelated/Register';
 import React, { useEffect, useState } from 'react';
-import { HashRouter, Routes, Route ,BrowserRouter} from 'react-router-dom';
+import BrowserRouter as { Routes, Route ,Router} from 'react-router-dom';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Profile from './Dashboard/Profile';
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path='/' element={user ? <Profile /> : <Login />} />
           <Route path='/LoginRelated/login' element={<Login />} />
@@ -35,7 +35,7 @@ function App() {
           <Route path='/Role/RoleDashboard' element={<RoleDashboard />} />
           <Route path='/Role/ProblemsR' element={<ProblemsR />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
       <ToastContainer />
     </>
   );
